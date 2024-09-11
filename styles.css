@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -23,6 +22,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    position: relative;
     cursor: pointer;
     flex: 1 1 calc(25% - 40px); /* 4 cards per row with 20px gap */
     margin: 10px;
@@ -47,4 +47,61 @@ body {
     .card {
         flex: 1 1 100%; /* 1 card per row */
     }
+}
+
+.edit-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.save-btn, .cancel-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background-color: #28a745;
+}
+
+.cancel-btn {
+    top: 45px; /* cancel button is placed below save button */
+    background-color: #dc3545;
+}
+
+.card.editing .edit-btn {
+    display: none;
+}
+
+.card.editing .save-btn, .card.editing .cancel-btn {
+    display: inline-block;
+}
+
+.editable {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    width: calc(100% - 12px); /* padding ve border için biraz yer bırakın */
+    box-sizing: border-box;
+    min-height: 200px; /* daha fazla alan sağlamak için */
+    margin-top: 10px;
+    overflow: auto; /* dikey kaydırma için */
+}
+
+.card-content p {
+    margin: 0; /* Üst ve alt boşlukları sıfırla */
+    padding: 0; /* İç boşlukları sıfırla */
 }
